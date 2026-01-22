@@ -1,13 +1,14 @@
-import CreateDeck from "./components/CreateDeck";
-
 import Flashcards from "./components/Flashcards";
+import Header from "./components/Header";
+import "./styles/app.scss";
 
 function App() {
-
   return (
     <>
-      <Flashcards />
-      <CreateDeck />
+      <div className="app-container">
+        <Header />
+        <Flashcards />
+      </div>
     </>
   );
 }

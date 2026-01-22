@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(56, 65, 68);*/
+  display: flex; /* Optional: to center content if needed */
+  justify-content: center;
+  align-items: center;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
