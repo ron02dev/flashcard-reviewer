@@ -10,8 +10,15 @@ declare global {
     imageAnswer?: string;
   }
 
-  interface flashcardDeck {
-    topicTitle: string;
-    topicCards: Card[];
+  interface Deck {
+    deckTitle: string;
+    deckId: string;
+    deck: Card[];
+  }
+
+
+  interface CardPayload {
+    deckId: string;
+    card: Card;
   }
 }

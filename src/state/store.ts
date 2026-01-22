@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import topicReducer from "./topic/flashcardSlice";
+import flashcardReducer from "./flashcard/flashcardSlide";
 
 export const store = configureStore({
   reducer: {
-    topic:topicReducer
+    flashcard: flashcardReducer,
   },
 });
 

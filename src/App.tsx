@@ -1,8 +1,13 @@
+import CreateDeck from "./components/CreateDeck";
+
+import Flashcards from "./components/Flashcards";
+
 function App() {
+
   return (
     <>
-      <h1>Test</h1>
-      
+      <Flashcards />
+      <CreateDeck />
     </>
   );
 }
