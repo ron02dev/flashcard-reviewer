@@ -23,8 +23,16 @@ function Header() {
         Flashcard Reviewer
       </h1>
       <div className="nav-container">
-        <IoAdd size="50px" className="add-icon" onClick={handleAddAction} />
-        <FaGear className="gear-icon" size="50px" onClick={handleEditAction} />
+        <IoAdd
+          size="50px"
+          className="add-icon icon"
+          onClick={handleAddAction}
+        />
+        <FaGear
+          className="gear-icon icon"
+          size="50px"
+          onClick={handleEditAction}
+        />
       </div>
     </div>
   );

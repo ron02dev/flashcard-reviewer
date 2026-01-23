@@ -1,0 +1,39 @@
+.select-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+
+  .box {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 8rem;
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .icon:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .box-left {
+    display: flex;
+    justify-content: end;
+    .icon {
+      border-radius: 25rem;
+      margin-right: 10px;
+    }
+  }
+  .box-right {
+    display: flex;
+    justify-content: start;
+    .icon {
+      border-radius: 25rem;
+      margin-left: 10px;
+    }
+  }
+}
