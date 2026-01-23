@@ -1,9 +1,9 @@
 function CreateFlashcards() {
-       return (
-              <div>
-                     <h3>Create Flashcards</h3>
-              </div>
-       )
+  return (
+    <div className="create-container">
+      <h3>Create New Deck</h3>
+    </div>
+  );
 }
 
-export default CreateFlashcards
+export default CreateFlashcards;
