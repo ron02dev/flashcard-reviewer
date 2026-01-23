@@ -1,46 +1,32 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-interface AppDataType {
-  decks: Deck[];
-}
 
-const initialState: AppDataType = {
-  decks: [
-    {
-      deckTitle: "deck 1",
-      deckId: "1",
-      deck: [
-        { cardId: "1", question: "question1", answer: "answer1" },
-        { cardId: "2", question: "question2", answer: "answer2" },
-        { cardId: "3", question: "question3", answer: "answer3" },
-      ],
-    },
-    {
-      deckTitle: "deck 2",
-      deckId: "2",
-      deck: [
-        { cardId: "1", question: "question1", answer: "answer1" },
-        { cardId: "2", question: "question2", answer: "answer2" },
-        { cardId: "3", question: "question3", answer: "answer3" },
-      ],
-    },
-  ],
+interface ControlType {
+  activeAction:
+    | "SELECT_FLASHCARDS"
+    | "CREATE_FLASHCARDS"
+    | "EDIT_FLASHCARDS"
+    | "PLAY_FLASHCARDS";
+}
+type ActionPayload =
+  | "SELECT_FLASHCARDS"
+  | "CREATE_FLASHCARDS"
+  | "EDIT_FLASHCARDS"
+  | "PLAY_FLASHCARDS";
+
+const initialState: ControlType = {
+  activeAction: "SELECT_FLASHCARDS",
 };
 
-const flashcardSlice = createSlice({
-  name: "flashcard",
+const controlSlice = createSlice({
+  name: "control",
   initialState,
   reducers: {
-    addCardToDeck: (state, action: PayloadAction<CardPayload>) => {
-      // const targetDeck = state.collection.find(
-      //   (deck) => deck.deckId === action.payload.deckId,
-      // );
-      // if (targetDeck) {
-      //   targetDeck.deck.push(action.payload.card);
-      // }
+    SET_ACTIVE_ACTION: (state, action: PayloadAction<ActionPayload>) => {
+      state.activeAction = action.payload;
     },
   },
 });
 
-export const { addCardToDeck } = flashcardSlice.actions;
+export const { SET_ACTIVE_ACTION } = controlSlice.actions;
 
-export default flashcardSlice.reducer;
+export default controlSlice.reducer;

@@ -8,8 +8,6 @@
     justify-content: space-around;
   }
 
- 
-
   .title {
     justify-content: center;
     text-align: center;
@@ -17,5 +15,10 @@
     border-radius: 5px;
     padding: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }

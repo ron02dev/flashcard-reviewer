@@ -17,8 +17,4 @@ declare global {
   }
 
 
-  interface CardPayload {
-    deckId: string;
-    card: Card;
-  }
 }

@@ -1,9 +1,14 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-interface AppDataType {
+interface CollectionOfDecksType {
   decks: Deck[];
 }
 
-const initialState: AppDataType = {
+// interface CardPayload {
+//   deckId: string;
+//   card: Card;
+// }
+
+const initialState: CollectionOfDecksType = {
   decks: [
     {
       deckTitle: "deck 1",
@@ -30,17 +35,17 @@ const flashcardSlice = createSlice({
   name: "flashcard",
   initialState,
   reducers: {
-    addCardToDeck: (state, action: PayloadAction<CardPayload>) => {
-      // const targetDeck = state.collection.find(
-      //   (deck) => deck.deckId === action.payload.deckId,
-      // );
-      // if (targetDeck) {
-      //   targetDeck.deck.push(action.payload.card);
-      // }
-    },
+    // addCardToDeck: (state, action: PayloadAction<CardPayload>) => {
+    //   // const targetDeck = state.collection.find(
+    //   //   (deck) => deck.deckId === action.payload.deckId,
+    //   // );
+    //   // if (targetDeck) {
+    //   //   targetDeck.deck.push(action.payload.card);
+    //   // }
+    // },
   },
 });
 
-export const { addCardToDeck } = flashcardSlice.actions;
+// export const { addCardToDeck } = flashcardSlice.actions;
 
 export default flashcardSlice.reducer;
