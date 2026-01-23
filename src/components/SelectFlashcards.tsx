@@ -9,10 +9,14 @@ function SelectFlashcards() {
         <p>left</p>
         <FaLeftLong className="icon" />
       </div>
-      <div className="box middle flashcard-container">
-        <div className="card">
-          <h2>Math Questions</h2>
+      <div className="box middle card-container">
+        <div className="card card-one">
+          <h1>Math Questions</h1>
         </div>
+        <div className="card card-two"></div>
+        <div className="card card-three"></div>
+        <div className="card card-four"></div>
+        <div className="card card-five"></div>
       </div>
       <div className="box box-right">
         <FaRightLong className="icon" />
