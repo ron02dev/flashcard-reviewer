@@ -12,7 +12,7 @@ declare global {
 
   interface Deck {
     deckTitle: string;
-    deckId: string;
+    deckId: number;
     deck: Card[];
   }
 

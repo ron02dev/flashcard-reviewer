@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-interface ControlType {
+interface ControlState {
   activeAction:
     | "SELECT_FLASHCARDS"
     | "CREATE_FLASHCARDS"
@@ -13,7 +13,7 @@ type ActionPayload =
   | "EDIT_FLASHCARDS"
   | "PLAY_FLASHCARDS";
 
-const initialState: ControlType = {
+const initialState: ControlState = {
   activeAction: "SELECT_FLASHCARDS",
 };
 

@@ -1,18 +1,17 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-interface CollectionOfDecksType {
+interface FlashcardsState {
   decks: Deck[];
+  flashcardAction: "IDLE" | "NEXT" | "BACK";
+  selectedDeck: Deck;
 }
 
-// interface CardPayload {
-//   deckId: string;
-//   card: Card;
-// }
+type FlashcardAction = "IDLE" | "NEXT" | "BACK";
 
-const initialState: CollectionOfDecksType = {
+const initialState: FlashcardsState = {
   decks: [
     {
-      deckTitle: "deck 1",
-      deckId: "1",
+      deckTitle: "MATH QUESTIONS1",
+      deckId: 1,
       deck: [
         { cardId: "1", question: "question1", answer: "answer1" },
         { cardId: "2", question: "question2", answer: "answer2" },
@@ -20,8 +19,17 @@ const initialState: CollectionOfDecksType = {
       ],
     },
     {
-      deckTitle: "deck 2",
-      deckId: "2",
+      deckTitle: "interview QUESTIONS2",
+      deckId: 2,
+      deck: [
+        { cardId: "1", question: "question1", answer: "answer1" },
+        { cardId: "2", question: "question2", answer: "answer2" },
+        { cardId: "3", question: "question3", answer: "answer3" },
+      ],
+    },
+    {
+      deckTitle: "THIRD DECK QUESTIONS3",
+      deckId: 3,
       deck: [
         { cardId: "1", question: "question1", answer: "answer1" },
         { cardId: "2", question: "question2", answer: "answer2" },
@@ -29,23 +37,54 @@ const initialState: CollectionOfDecksType = {
       ],
     },
   ],
+  selectedDeck:
+    {
+      deckTitle: "MATH QUESTIONS1",
+      deckId: 1,
+      deck: [
+        { cardId: "1", question: "question1", answer: "answer1" },
+        { cardId: "2", question: "question2", answer: "answer2" },
+        { cardId: "3", question: "question3", answer: "answer3" },
+      ],
+    }
+    ,
+  flashcardAction: "IDLE",
+   
 };
 
 const flashcardSlice = createSlice({
   name: "flashcard",
   initialState,
   reducers: {
-    // addCardToDeck: (state, action: PayloadAction<CardPayload>) => {
-    //   // const targetDeck = state.collection.find(
-    //   //   (deck) => deck.deckId === action.payload.deckId,
-    //   // );
-    //   // if (targetDeck) {
-    //   //   targetDeck.deck.push(action.payload.card);
-    //   // }
-    // },
+    deckSelection: (state, action: PayloadAction<FlashcardAction>) => {
+         const deckLen = state.decks.length;
+      switch (action.payload) {
+        case "NEXT":
+    
+
+       if(state.selectedDeck.deckId == deckLen){
+      state.selectedDeck = state.decks[0]
+       }else{
+state.selectedDeck = state.decks[state.selectedDeck.deckId++]
+       }
+        
+    
+
+          break;
+        case "BACK":
+               if(state.selectedDeck.deckId == deckLen){
+      state.selectedDeck = state.decks[0]
+       }else{
+state.selectedDeck = state.decks[state.selectedDeck.deckId--]
+       }
+          break;
+        default:
+          break;
+      }
+    },
   },
 });
 
-// export const { addCardToDeck } = flashcardSlice.actions;
+export const { deckSelection } = flashcardSlice.actions;
 
 export default flashcardSlice.reducer;
