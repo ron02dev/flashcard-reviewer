@@ -20,6 +20,8 @@
   .card-one:hover {
     height: 95%;
     width: 95%;
+    top: 50%;
+    left: 50%;
   }
 
   .card:hover:not(.card-one) {
