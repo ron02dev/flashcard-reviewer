@@ -5,23 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { SET_ACTIVE_ACTION } from "../state/control/controlSlice";
 import type { RootState } from "../state/store";
 import { deckSelection } from "../state/flashcard/flashcardSlide";
-import { useEffect } from "react";
 
 function SelectFlashcards() {
   const dispatch = useDispatch();
 
- 
-  const selectedDeck= useSelector((state: RootState) => state.flashcard.selectedDeck);
-   const decks= useSelector((state: RootState) => state.flashcard.decks);
-
-
-
-  useEffect(()=>{
-
-    console.log(selectedDeck.deckId,"deckiod")
-    console.log(decks.length,"leng")
-  },[selectedDeck])
-
+  const selectedDeck = useSelector(
+    (state: RootState) => state.flashcard.selectedDeck,
+  );
+  const decks = useSelector((state: RootState) => state.flashcard.decks);
 
   const handleSelect = () => {
     dispatch(SET_ACTIVE_ACTION("PLAY_FLASHCARDS"));
@@ -29,38 +20,30 @@ function SelectFlashcards() {
 
   const handleNext = () => {
     dispatch(deckSelection("NEXT"));
-    console.log("this is nmext")
-    
   };
   const handleBack = () => {
     dispatch(deckSelection("BACK"));
-
   };
-
-  
 
   return (
     <div className="select-container">
       <div className="box box-left">
-        <p>left</p>
         <FaLeftLong className="icon" onClick={handleBack} />
       </div>
       <div className="box middle card-container">
-      
-
-      {selectedDeck && <div className={`card card-one`} onClick={handleSelect}>
-
-       <h3>{selectedDeck.deckTitle}</h3>
-       </div> }
-       
-        <div className="card card-two"></div>
-        <div className="card card-three"></div>
-        <div className="card card-four"></div>
-        <div className="card card-five"></div>
+        {selectedDeck ? (
+          <div className="card">
+            <h1>{selectedDeck.deckTitle}</h1>
+            <p>theres a card</p>
+          </div>
+        ) : (
+          <div className="card">
+            <h1>No created deck please create one</h1>
+          </div>
+        )}
       </div>
       <div className="box box-right">
         <FaRightLong className="icon" onClick={handleNext} />
-        <p>right</p>
       </div>
     </div>
   );
