@@ -38,35 +38,35 @@
 
 
 
-  // .card:nth-child(2) {
-  //   top: 52%;
-  //   left: 48%;
-  //   rotate: 3deg;
-  //   z-index: 4; /* A lower z-index sends it to the back */
-  //   background-color: #d6e5bd;
-  // }
+  .card:nth-child(2) {
+    top: 52%;
+    left: 48%;
+    rotate: 3deg;
+    z-index: 4; /* A lower z-index sends it to the back */
+    background-color: #d6e5bd;
+  }
 
-  // .card:nth-child(3) {
-  //   top: 53%; //+
-  //   left: 49%; //+
-  //   rotate: 4deg; //+
-  //   z-index: 3; /* A lower z-index sends it to the back */
-  //   background-color: #f9e1a8;
-  // }
+  .card:nth-child(3) {
+    top: 53%; //+
+    left: 49%; //+
+    rotate: 4deg; //+
+    z-index: 3; /* A lower z-index sends it to the back */
+    background-color: #f9e1a8;
+  }
 
-  // .card:nth-child(4) {
-  //   top: 54%; //+
-  //   left: 49%; //+
-  //   rotate: 5deg; //+
-  //   z-index: 2; /* A lower z-index sends it to the back */
-  //   background-color: #bcd8ec;
-  // }
+  .card:nth-child(4) {
+    top: 54%; //+
+    left: 49%; //+
+    rotate: 5deg; //+
+    z-index: 2; /* A lower z-index sends it to the back */
+    background-color: #bcd8ec;
+  }
 
-  // .card:nth-child(5) {
-  //   top: 55%; //+
-  //   left: 50%; //+
-  //   rotate: 5deg; //+
-  //   z-index: 1; /* A lower z-index sends it to the back */
-  //   background-color: #8000ff;
-  // }
+  .card:nth-child(5) {
+    top: 55%; //+
+    left: 50%; //+
+    rotate: 5deg; //+
+    z-index: 1; /* A lower z-index sends it to the back */
+    background-color: #8000ff;
+  }
 }
