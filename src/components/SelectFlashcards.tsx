@@ -51,7 +51,7 @@ function SelectFlashcards() {
       >
         {selectedDeck ? (
           <>
-            <div className="card anm-btn-hvr ">
+            <div className="card card-one" onClick={handleSelect}>
               <h1>{selectedDeck.deckTitle}</h1>
               <p>theres a card</p>
             </div>
@@ -63,7 +63,7 @@ function SelectFlashcards() {
         ) : (
           <>
             {" "}
-            <div className="card">
+            <div className="card card-one">
               <h1>No created deck please create one</h1>
             </div>
           </>
