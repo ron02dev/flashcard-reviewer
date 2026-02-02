@@ -16,6 +16,9 @@ const initialState: FlashcardsState = {
         { cardId: "1", question: "question1", answer: "answer1" },
         { cardId: "2", question: "question2", answer: "answer2" },
         { cardId: "3", question: "question3", answer: "answer3" },
+        { cardId: "4", question: "question1", answer: "answer1" },
+        { cardId: "5", question: "question2", answer: "answer2" },
+        { cardId: "6", question: "question3", answer: "answer3" },
       ],
     },
     {

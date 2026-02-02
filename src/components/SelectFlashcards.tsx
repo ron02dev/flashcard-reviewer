@@ -10,6 +10,29 @@ import { useState } from "react";
 
 function SelectFlashcards() {
   const dispatch = useDispatch();
+
+  const handleNext = () => {
+    dispatch(deckSelection("NEXT"));
+  };
+  const handleBack = () => {
+    dispatch(deckSelection("BACK"));
+  };
+
+  return (
+    <div className="select-container">
+      <div className="box box-left">
+        <FaLeftLong className="icon anm-btn-hvr" onClick={handleBack} />
+      </div>
+      <Decks />
+      <div className="box box-right">
+        <FaRightLong className="icon anm-btn-hvr" onClick={handleNext} />
+      </div>
+    </div>
+  );
+}
+
+function Decks() {
+  const dispatch = useDispatch();
   const [animate, setAnimate] = useState(true);
   const selectedDeck = useSelector(
     (state: RootState) => state.flashcard.selectedDeck,
@@ -29,20 +52,9 @@ function SelectFlashcards() {
       setTimeout(() => setAnimate(true), 25);
     }
   };
-  const handleNext = () => {
-    handleClick("true");
-    dispatch(deckSelection("NEXT"));
-  };
-  const handleBack = () => {
-    handleClick("false");
-    dispatch(deckSelection("BACK"));
-  };
 
   return (
-    <div className="select-container">
-      <div className="box box-left">
-        <FaLeftLong className="icon anm-btn-hvr" onClick={handleBack} />
-      </div>
+    <>
       <div
         key={selectedDeck?.deckId}
         className={`box middle card-container animate__animated ${
@@ -55,9 +67,11 @@ function SelectFlashcards() {
               <h1>{selectedDeck.deckTitle}</h1>
               <p>theres a card</p>
             </div>
-            {decks &&
-              decks.map((deck: Deck) => (
-                <div className="card">{deck.deckId}</div>
+            {selectedDeck &&
+              selectedDeck.deck.map((card: Card) => (
+                <div className="card" onClick={handleSelect}>
+                  {card.question}
+                </div>
               ))}
           </>
         ) : (
@@ -69,11 +83,9 @@ function SelectFlashcards() {
           </>
         )}
       </div>
-      <div className="box box-right">
-        <FaRightLong className="icon anm-btn-hvr" onClick={handleNext} />
-      </div>
-    </div>
+    </>
   );
 }
 
+// FEB 3: ON HOVER I WANT THE CARD TO SHOW AS A PLAYING CARD THAT IS ON HAND
 export default SelectFlashcards;
